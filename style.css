@@ -1,0 +1,484 @@
+body{
+        background-image: url("bg.jpg"); /* replace with your image */
+        background-size: cover;          /* fills entire screen */
+        background-position: center;     /* keeps it centered */
+        background-repeat: no-repeat;    /* no tiling */
+        min-height: 100vh;               /* full viewport height */
+        background-color: antiquewhite;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    font-family:sans-serif;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    background-color: black;
+    color: white;
+}
+nav ul li{
+    padding: 0 12px;
+}
+
+/* Navigation links */
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #1db954; /* Spotify green */
+}
+
+/* Active underline */
+nav ul li a.active {
+  border-bottom: 2px solid #1db954;
+}
+
+/* Animated underline on hover */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #1db954;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* About section styling */
+.about {
+  background: white;
+  color: black;
+  padding: 40px;
+  border-radius: 12px;
+  width: 70%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.about p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: black;
+  color: white;
+  margin-top: 40px;
+}
+
+.container{
+    min-height: 75vh;
+    background-color: black;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    width: 70%;
+    margin: 23px auto;
+    border: solid white;
+    border-radius: 12px;
+    padding: 34px;
+    background-image: url(bg.jpg);
+     background-repeat: no-repeat;            /* stops repeating */
+  background-size: cover;                  /* scales to cover the whole screen */
+  background-position: center;             /* keeps it centered */
+}
+
+.searchBox {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.searchIcon {
+  color: white;
+  cursor: pointer;
+}
+
+#searchBar {
+  padding: 6px 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 180px;
+  transition: width 0.3s ease;
+}
+
+#searchBar:focus {
+  width: 240px;
+}
+
+
+
+.songItem{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 12px 0;
+    
+    border-bottom: 1px solid white;
+    background-color: white;
+    color: black;
+    border-radius: 36px;
+}
+.songItem img{
+    margin-left: 12px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.brand img{
+    width: 43px;
+    padding: 0 8px;
+}
+.brand{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+
+/* Hover effect for play/next/previous buttons */
+.playBtn {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+.playBtn:hover {
+  transform: scale(1.1);
+ background-color: #ff4757; /* Spotify green */
+  color: white;
+  border-radius: 20%;
+}
+
+/* Hover effect for song list items */
+.songItem {
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.songItem:hover {
+  background-color: rgba(29, 185, 84, 0.1); /* subtle green tint */
+}
+
+
+
+
+
+.bottom{
+
+    position:sticky;
+    height: 130px;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 12px;
+    gap: 12px;
+}
+
+.icons{
+    display: flex;
+  align-items: center;
+    gap: 20px;
+    margin-top: 14px;
+}
+
+
+
+
+
+.icons svg{
+    
+    cursor: pointer;
+}
+
+#myProgressBar{
+    cursor: pointer;
+    width: 80vw;
+    flex: 1;
+}
+.timeRow {
+  display: flex;
+  align-items: center;   /* keeps them vertically centered */
+  width: 100%;
+  gap: 8px;              /* spacing between items */
+}
+
+.timeRow span {
+  font-size: 14px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.timeRow input[type="range"] {
+  flex: 1;               /* progress bar stretches to fill space */
+  margin: 0 6px;         /* spacing around bar */
+}
+
+#currentTime, #totalDuration {
+  min-width: 40px;       /* ensures they don’t shrink too small */
+  text-align: center;
+  font-size: 14px;
+}
+
+
+.timestamp{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    margin-right: 24px;
+    
+}
+.timestamp svg{
+    cursor: pointer;
+}
+
+
+
+.songInfo{
+    display: flex;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.songInfo img{
+   
+    opacity: 0;
+    transition: opacity 0.3s  ease-in;
+}
+
+
+
+
+
+/* Scale everything down on mobile, keep same layout but hide volume bar */
+@media (max-width: 480px) {
+
+  body {
+    font-size: 14px; /* shrink base text */
+    padding-bottom: 80px;
+  }
+  nav ul li {
+    font-size: 12px; /* smaller nav text */
+  }
+
+  #searchBar {
+    width: 140px; /* narrower search bar */
+    font-size: 12px;
+  }
+
+  .songItem img {
+    width: 35px;
+    height: 35px; /* smaller cover images */
+  }
+
+  .icons svg,
+  .playBtn {
+    width: 28px;
+    height: 28px; /* smaller control icons */
+  }
+
+  #myProgressBar {
+    width: 65vw; /* narrower progress bar */
+  }
+
+  .songInfo img {
+    width: 30px; /* smaller gif */
+  }
+
+  .songInfo {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+  }
+
+
+  
+
+   
+
+
+  .bottom {
+      
+      
+     border-radius: 12px;
+     position:sticky; 
+     bottom: 0;
+     display:flex;
+     flex-direction:column;   /* stack neatly */
+     align-items: center;
+     justify-content: center;
+     gap: 15px;
+     padding: 15px;
+     height: auto;
+     width: 100%;
+  }
+
+  .about h2 {
+    font-size: 1.2rem;
+  }
+
+  .about p {
+    font-size: 0.9rem;
+  }
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: #333;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #007bff; /* highlight color on hover */
+}
+
+/* General reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navigation */
+nav {
+  background-color: #111;
+  padding: 10px;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+nav li {
+  margin-right: 15px;
+}
+nav .brand {
+  font-weight: bold;
+  color: #1DB954; /* Spotify green */
+  display: flex;
+  align-items: center;
+}
+nav .brand img {
+  height: 30px;
+  margin-right: 8px;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+}
+nav a.active {
+  border-bottom: 2px solid #1DB954;
+}
+
+/* About section */
+.about {
+  padding: 20px;
+  text-align: center;
+}
+.about h2 {
+  margin-bottom: 10px;
+}
+.about p {
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.social-links a {
+  color: white;
+  transition: color 0.3s;
+}
+.social-links a:hover {
+  color: #1DB954;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav li {
+    margin: 8px 0;
+  }
+  .about p {
+    padding: 0 10px;
+    text-align: justify;
+  }
+  .social-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav .brand img {
+    height: 24px;
+  }
+  .social-links i {
+    font-size: 1.5rem;
+  }
+  footer p {
+    font-size: 0.9rem;
+  }
+}
+
+  
