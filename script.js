@@ -36,6 +36,14 @@ let songs = [
      {songName:"knock knock - KR$NA", filePath:"songs/22.mp3", coverPath:"covers/22.jpg"}
 ]
 
+// Preload all songs at startup
+songs.forEach(song => {
+  const audio = new Audio();
+  audio.src = song.filePath;
+  audio.preload = "auto";  // load audio data in advance
+});
+
+
 
 function setPlayIcon(svgEl) {
   svgEl.querySelector("path").setAttribute("d", "M5 3v18l15-9-15-9z"); // Play
@@ -162,13 +170,13 @@ Array.from(document.getElementsByClassName('songlistplay')).forEach((element, i)
 //Listen to Events
 audioElement.addEventListener('timeupdate',()=>{
 //update seekbar
-progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
+ let progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
 myProgressBar.value= progress;
-})
+});
 
 myProgressBar.addEventListener('input',() =>{
   audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
-} )
+} );   
 
 
 // Next button

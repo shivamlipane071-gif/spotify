@@ -32,7 +32,7 @@ nav ul li a {
   color: white;
   text-decoration: none;
   padding: 6px 12px;
-  position: relative;
+  position:relative;
   transition: color 0.3s ease;
 }
 
@@ -178,6 +178,10 @@ footer {
   color: white;
   border-radius: 20%;
 }
+#masterPlay{
+  
+  border-radius: 10%;
+}
 
 /* Hover effect for song list items */
 .songItem {
@@ -291,7 +295,7 @@ footer {
     padding-bottom: 80px;
   }
   nav ul li {
-    font-size: 12px; /* smaller nav text */
+    font-size: 16px; /* smaller nav text */
   }
 
   #searchBar {
@@ -405,10 +409,13 @@ nav .brand {
   align-items: center;
 }
 nav .brand img {
-  height: 30px;
+  width: 50px;
+  height: 50px;
   margin-right: 8px;
 }
+
 nav a {
+ 
   text-decoration: none;
   color: white;
 }
@@ -481,4 +488,9 @@ footer {
   }
 }
 
-  
+.brand {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;   /* Bold for strong branding */
+  /*font-size: 24px;    /* Adjust size as needed */
+  /*letter-spacing: 1px; /* Optional: adds spacing for logo-like feel */
+}
